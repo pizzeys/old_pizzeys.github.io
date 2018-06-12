@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sam Pizzey</title>
+    <link>https://pizzey.me/</link>
+    <description>Recent content on Sam Pizzey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/mopman&#34;&gt;Sam Pizzey&lt;/a&gt; 2018</copyright>
+    <lastBuildDate>Tue, 12 Jun 2018 17:11:33 +0100</lastBuildDate>
+    
+	<atom:link href="https://pizzey.me/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Protecting from the CPanel Ransomware That Doesn&#39;t Exist Yet</title>
+      <link>https://pizzey.me/blog/protecting-from-the-cpanel-ransomware-that-doesnt-exist-yet/</link>
+      <pubDate>Tue, 12 Jun 2018 17:11:33 +0100</pubDate>
+      
+      <guid>https://pizzey.me/blog/protecting-from-the-cpanel-ransomware-that-doesnt-exist-yet/</guid>
+      <description>Ransomware just ain’t what it used to be. From the now-relatively-Paleolithic Cryptolocker until today we’ve seen the criminals who run these operations evolve to meet the responses brought against them - from offering free decryption if you infect others, to exploiting insecure MongoDB instances they have shown they’re totally willing to find new avenues to get an edge in this lucrative business.
+One thing we haven’t seen a lot of though is ransomware targeting website hosting environments.</description>
+    </item>
+    
+    <item>
+      <title>Honeypotting for the Lazy: Weekend Fishing for Router Bots</title>
+      <link>https://pizzey.me/blog/honeypotting-for-the-lazy-weekend-fishing-for-router-bots/</link>
+      <pubDate>Sat, 07 Jan 2017 17:05:56 +0100</pubDate>
+      
+      <guid>https://pizzey.me/blog/honeypotting-for-the-lazy-weekend-fishing-for-router-bots/</guid>
+      <description>Recently I decided that I wanted to do a bit more malware analysis. I have a reverse engineering background of sorts, so I wasn’t so concerned with the mechanics of analysing the malware as I was with the question of how do I actually find a sample to analyse that is interesting to me and answers some sort of actual question, rather than purely being a learning exercise?
+This happened to be a day or so after the Netgear vulnerability affecting their consumer routers was released to the public and gave me a question to answer - would the IoT botnet authors add support for this vulnerability to their bots?</description>
+    </item>
+    
+    <item>
+      <title>No, I didn&#39;t try to break Companies House</title>
+      <link>https://pizzey.me/blog/no-i-didnt-try-to-break-companies-house/</link>
+      <pubDate>Fri, 30 Dec 2016 17:00:19 +0100</pubDate>
+      
+      <guid>https://pizzey.me/blog/no-i-didnt-try-to-break-companies-house/</guid>
+      <description>I have a tendency to take a joke too far.
+The most recent example of this would be yesterday in IRC, where I was discussing with a few friends what I should name my new company. Being a business to business consultancy, and mostly a one-man operation, the name isn’t that important, but I wanted something with a bit of personality. And I asked:
+&amp;lt;Mopman&amp;gt; Is there anything stopping me from registering ; DROP TABLE &amp;quot;Companies&amp;quot;;-- Ltd as a company name?</description>
+    </item>
+    
+    <item>
+      <title>Three leaks users numbers via web service</title>
+      <link>https://pizzey.me/blog/three-leaks-users-numbers-via-web-service/</link>
+      <pubDate>Tue, 18 Mar 2014 16:48:50 +0100</pubDate>
+      
+      <guid>https://pizzey.me/blog/three-leaks-users-numbers-via-web-service/</guid>
+      <description>OK, so you can file this one under &amp;ldquo;annoying, but not the end of the world&amp;rdquo;.
+Three, like most mobile providers, has a mobile application that comes installed on your phone if you buy one from them, or you can download separately if you wish. It mostly replicates a limited subset of the MyThree website, allowing you to view your recent invoices, whether you are eligible for an upgrade, etc.</description>
+    </item>
+    
+    <item>
+      <title>Never let it be said that I waste time...</title>
+      <link>https://pizzey.me/blog/never-let-it-be-said-that-i-waste-time/</link>
+      <pubDate>Tue, 07 Jan 2014 16:41:54 +0100</pubDate>
+      
+      <guid>https://pizzey.me/blog/never-let-it-be-said-that-i-waste-time/</guid>
+      <description>&lt;p&gt;A friend of mine recently shared the following on Facebook:&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

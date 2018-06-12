@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://pizzey.me/blog/protecting-from-the-cpanel-ransomware-that-doesnt-exist-yet/</loc>
+    <lastmod>2018-06-12T17:11:33+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pizzey.me/blog/honeypotting-for-the-lazy-weekend-fishing-for-router-bots/</loc>
+    <lastmod>2017-01-07T17:05:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pizzey.me/blog/no-i-didnt-try-to-break-companies-house/</loc>
+    <lastmod>2016-12-30T17:00:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pizzey.me/blog/three-leaks-users-numbers-via-web-service/</loc>
+    <lastmod>2014-03-18T16:48:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pizzey.me/blog/never-let-it-be-said-that-i-waste-time/</loc>
+    <lastmod>2014-01-07T16:41:54+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pizzey.me/blog/</loc>
+    <lastmod>2018-06-12T17:11:33+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://pizzey.me/</loc>
+    <lastmod>2018-06-12T17:11:33+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://pizzey.me/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

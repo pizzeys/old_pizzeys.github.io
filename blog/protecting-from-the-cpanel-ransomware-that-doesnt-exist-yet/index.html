@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Protecting from the CPanel Ransomware That Doesn&#39;t Exist Yet | Sam Pizzey</title>
+
+<meta property='og:title' content='Protecting from the CPanel Ransomware That Doesn&#39;t Exist Yet - Sam Pizzey'>
+<meta property='og:description' content='Ransomware just ain’t what it used to be. From the now-relatively-Paleolithic Cryptolocker until today we’ve seen the criminals who run these operations evolve to meet the responses brought against them - from offering free decryption if you infect others, to exploiting insecure MongoDB instances they have shown they’re totally willing to find new avenues to get an edge in this lucrative business.
+One thing we haven’t seen a lot of though is ransomware targeting website hosting environments.'>
+<meta property='og:url' content='https://pizzey.me/blog/protecting-from-the-cpanel-ransomware-that-doesnt-exist-yet/'>
+<meta property='og:site_name' content='Sam Pizzey'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://www.gravatar.com/avatar/4fcca0f870c6fd5c6647fe68f4b0f32c?s=256'><meta property='article:section' content='Blog'><meta property='article:published_time' content='2018-06-12T17:11:33&#43;01:00'/><meta property='article:modified_time' content='2018-06-12T17:11:33&#43;01:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@mopman'><meta name='twitter:creator' content='@mopman'>
+<link rel="stylesheet" href="/css/style.css"/><link rel='stylesheet' href='https://pizzey.me/css/custom.css'><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://pizzey.me"><h1 class="title is-4">Sam Pizzey</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile"><a class="level-item" aria-label="email" href='mailto:sam@pizzey.me' target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="github" href='https://github.com/pizzeys' target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="linkedin" href='https://linkedin.com/in/pizzeys' target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path stroke-width="1.8" d="m5.839218,4.101561c0,1.211972 -0.974141,2.194011 -2.176459,2.194011s-2.176459,-0.982039 -2.176459,-2.194011c0,-1.211094 0.974141,-2.194011 2.176459,-2.194011s2.176459,0.982917 2.176459,2.194011zm0.017552,3.94922l-4.388022,0l0,14.04167l4.388022,0l0,-14.04167zm7.005038,0l-4.359939,0l0,14.04167l4.360816,0l0,-7.370999c0,-4.098413 5.291077,-4.433657 5.291077,0l0,7.370999l4.377491,0l0,-8.89101c0,-6.915523 -7.829986,-6.66365 -9.669445,-3.259423l0,-1.891237z"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="twitter" href='https://twitter.com/mopman' target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+    </div>
+    <h2 class="subtitle is-6">June 12, 2018</h2>
+    <h1 class="title">Protecting from the CPanel Ransomware That Doesn&#39;t Exist Yet</h1>
+    
+    <div class="content">
+      <p>Ransomware just ain’t what it used to be. From the now-relatively-Paleolithic Cryptolocker until today we’ve seen the criminals who run these operations evolve to meet the responses brought against them - from <a href="https://www.wired.com/2016/12/popcorn-time-ransomware/">offering free decryption if you infect others</a>, to <a href="http://www.computerworld.com/article/3157766/linux/mongodb-ransomware-attacks-and-lessons-learned.html">exploiting insecure MongoDB instances</a> they have shown they’re totally willing to find new avenues to get an edge in this lucrative business.</p>
+
+<p>One thing we haven’t seen a lot of though is ransomware targeting website hosting environments. And it makes a lot of sense - if they target your generic Linux hosting environment customers, they are hitting core business infrastructure that the business needs to operate. It’s also probably a smaller/mid-size business, or at least one without a technical focus, and so the victim is likely to not have the infrastructure to recover from it without paying you. And on top of that, losing your website is embarassing, and everyone can see the effects, hastening the payment.</p>
+
+<p>Sure, we’ve seen a few, half-assed attempts - Sophos has a writeup on something they call <a href="https://nakedsecurity.sophos.com/2016/03/02/php-ransomware-attacks-blogs-websites-content-managers-and-more/">PHPRansm-B</a> (which I’d like a sample of if anyone could pass me one, by the way), but I am fairly convinced that at some point we will see a devastatingly effective version of this, and we should probably be preparing now. So how would it look, and what are the risks?</p>
+
+<p>Well firstly, we cannot prevent people from getting infected by it. Sure, we can try. We can throw WAF’s and maldet scans up and tell people to update their software until the cows come home. But they will still get hit via unpatched software and bad passwords. They do now, all the time, despite our best efforts. Industry ‘secret’ for you: many of our customers would be out of luck every week, if it wasn’t for our backups. They don’t have any of their own, and they’re running a plugin from 2009. The WAF can only do so much.</p>
+
+<p>But we have the backups, right? So, unlike many corporate environments, we are doing the number one thing that helps mitigate ransomware. But how are we doing backups?</p>
+
+<p>For many hosting companies, the answer is ‘with CPanel’ - because they’re already running CPanel, so why not use its built-in backup system? Industry ‘secret’ 2: CPanel’s backup system is not good in this scenario.</p>
+
+<p>For those who’ve never looked into it, CPanel contains a configuration file, <a href="https://documentation.cpanel.net/display/CKB/How+to+Exclude+Files+From+Backups">cpbackup-exclude.conf</a>. The most common use of this is to globally-exclude files from the backups in /etc/cpbackup-exclude.conf, but it can also be used locally from the users home directory. Which our theoretical ransomware has access to.</p>
+
+<p>So, an attacker finds a few 0-days in commonly used software, infects as many as it can, updates this file to exclude ‘*’ (which in my tests, excludes all of public_html and also email!) and waits for 30 days. After the monthly backups have rotated out, it encrypts everything. The user contacts their host for a backup restore, and there is one, it’s totally valid and popped no warnings, but restoring it has no effect, they’re still boned. Oops.</p>
+
+<p>The database will still be there, thankfully. I’ve not managed to find a reliable method of excluding databases silently, but I suspect there is one (I’ve had scenarios before where database backups are mysteriously missing for users, and we had no indication). Even if not, though, losing email&amp;files is probably enough, and the attacker could always get super fancy and encrypt the database on day-1 with a shim that decrypts it on the fly until ransom day, or something.</p>
+
+<p>I fear this non-existent malware. And I would bet money on it coming soon, which is why I don’t feel too bad about giving out the blueprints. What can we do about it now?</p>
+
+<p>Well, the real answer is to stop using a backup system that is compromisable by the attacker. I don’t have any suggestion on which to use (I have gripes and pros for all of them). In the short term, create a cpbackup-exclude.conf for all of your users, and make it immutable. There might be a better way to disable this functionality entirely - does anybody know? I asked around and got nothing. This also isn’t a dig at CPanel particularly, other similar systems have the same problems.</p>
+
+<p>Also, try to herd your users into updating software regularly. Somehow.</p>
+
+<p>Restless dreams!</p>
+
+      
+      <div class="related">
+</div>
+      
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://twitter.com/mopman">Sam Pizzey</a> 2018</p>
+    
+  </div>
+</section>
+
+</body>
+</html>
+
