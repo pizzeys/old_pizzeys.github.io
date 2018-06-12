@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://twitter.com/mopman&#34;&gt;Sam Pizzey&lt;/a&gt; 2018</copyright>
-    <lastBuildDate>Tue, 12 Jun 2018 17:11:33 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 15 Jan 2017 17:11:33 +0100</lastBuildDate>
     
 	<atom:link href="https://pizzey.me/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Protecting from the CPanel Ransomware That Doesn&#39;t Exist Yet</title>
       <link>https://pizzey.me/blog/protecting-from-the-cpanel-ransomware-that-doesnt-exist-yet/</link>
-      <pubDate>Tue, 12 Jun 2018 17:11:33 +0100</pubDate>
+      <pubDate>Sun, 15 Jan 2017 17:11:33 +0100</pubDate>
       
       <guid>https://pizzey.me/blog/protecting-from-the-cpanel-ransomware-that-doesnt-exist-yet/</guid>
       <description>Ransomware just ain’t what it used to be. From the now-relatively-Paleolithic Cryptolocker until today we’ve seen the criminals who run these operations evolve to meet the responses brought against them - from offering free decryption if you infect others, to exploiting insecure MongoDB instances they have shown they’re totally willing to find new avenues to get an edge in this lucrative business.
